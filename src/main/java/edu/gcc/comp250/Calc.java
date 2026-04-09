@@ -6,7 +6,7 @@ public class Calc {
      * @param b
      * @return
      */
-    public int add (int a, int b) {
+    public int add(int a, int b) {
         return a + b;
     }
 
@@ -15,7 +15,7 @@ public class Calc {
      * @param b
      * @return
      */
-    public int divide (int a, int b) {
+    public int divide(int a, int b) {
         return a / b;
     }
 }
