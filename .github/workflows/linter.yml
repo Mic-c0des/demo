@@ -1,0 +1,32 @@
+name: Lint
+
+on:
+  push:
+    branches-ignore: [main, master]  # runs on feature branches
+  pull_request:
+    branches: [main, master]         # runs on PRs targeting main/master
+
+permissions: {}
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+      statuses: write       # lets Super-Linter post individual check statuses
+      issues: write         # needed for PR comment summaries
+      pull-requests: write  # needed for PR comment summaries
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history needed to detect changed files
+
+      - name: Super-Linter
+        uses: super-linter/super-linter@v8.6.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: false  # only lint files changed in the PR
