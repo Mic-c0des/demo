@@ -30,7 +30,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: false  # only lint files changed in the PR
-          VALIDATE_GOOGLE_JAVA_FORMAT: false #too late to switch to 2 space indents 
+          VALIDATE_GOOGLE_JAVA_FORMAT: false #too late to switch to 2 space indents
           VALIDATE_GITHUB_ACTIONS_ZIZMOR: false #ZIZMOR checks for security, will likely always fail. Can consider reactivation if we switch to a sec focus.
           VALIDATE_YAML_PRETTIER: false #We have like 2 yaml files, I can't be bothered to make them fit the format...they look fine to me.
-          
