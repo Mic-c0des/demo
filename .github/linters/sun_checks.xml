@@ -12,7 +12,7 @@
     <module name="MethodName"/>
     <module name="ParameterName"/>
     <module name="LocalVariableName"/>
-    <module name="ClassNameCheck"/>
+    <module name="TypeName"/>
 
     <!-- Whitespace & Formatting -->
     <module name="WhitespaceAround"/>
